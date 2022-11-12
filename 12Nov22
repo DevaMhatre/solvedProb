@@ -1,0 +1,32 @@
+// Q1. find Min and Max from arr and print their SUM
+// Q2. Rev a String ...
+
+import java.util.*;
+import java.io.*;
+import java.lang.*;
+
+
+
+class Reverse
+{
+    // Complete the function
+    // str: input string
+    public static String reverseWord(String str)
+    { StringBuilder rev =  new StringBuilder("");
+        // Reverse the string str
+        Stack<Character> ch = new Stack<>();
+        
+        for(int i =0; i< str.length(); i++){
+            char cha = str.charAt(i);
+            ch.push(cha);
+        }
+        
+        while(!ch.isEmpty()){
+           rev.append(ch.pop());
+        }
+        
+         str = rev.toString();
+        
+        return str;
+    }
+}

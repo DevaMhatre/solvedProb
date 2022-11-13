@@ -17,6 +17,30 @@ class Solution {
 
 }
 
+Q5. Chocolate Distribution Problem
+
+static int findMinDiff(int arr[], int n, int m)
+    {
+      if (m == 0 || n == 0)
+            return 0;
+            
+            Arrays.sort(arr);
+    
+      if (n < m)
+            return -1;
+        int min_diff = Integer.MAX_VALUE;
+
+
+for (int i = 0; i + m - 1 < n; i++) {
+            int diff = arr[i + m - 1] - arr[i];
+            if (diff < min_diff)
+                min_diff = diff;
+        }
+        return min_diff;
+    }
+    
+    
+    
 Q6. Search in Rotated Sorted Array
 class Solution {
      public int search(int[] nums, int target) {

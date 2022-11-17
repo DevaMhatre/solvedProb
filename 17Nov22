@@ -147,3 +147,32 @@ class Solution {
 }
 
 
+//Q. 9 Logest Common Prefix  in given SubString Array!
+
+class Solution {
+    
+public String longestCommonPrefix(String[] strs) {
+
+    if (strs.length == 0) 
+        return "";
+
+    String prefix = strs[0];                //Firstly we will take 1st word in "Prefix"
+
+    for (int i = 1; i < strs.length; i++){
+        while (strs[i].indexOf(prefix) != 0) {  // returns the index within this string 'of the 
+                                                // first occurrence' of the specified substring
+
+            prefix = prefix.substring(0    , prefix.length() - 1);
+            // we should cut down the prefix a little bit (remove the last character)
+
+            if (prefix.isEmpty()) 
+                return "";
+        }    
+    }    
+    return prefix;
+}
+}
+
+
+
+

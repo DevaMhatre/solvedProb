@@ -100,4 +100,50 @@ class Solution {
 }
 
 
+Q8 . valid Paranthesis
+
+class Solution {
+    public boolean isValid(String s) {
+        Stack<Character> st = new Stack<>();
+
+        for(int i =0 ; i< s.length(); i++){                 //Single for loop for traversal
+            char ch = s.charAt(i);
+        
+            if( ch =='[' || ch =='(' || ch=='{'){           //Stack Push for...Opening Paranthesis
+                st.push(ch);
+            }
+
+            else{                                           //Else Condition for closing paranthesis
+                // if(st.isEmpty()){                                    //IMP isEmpty condion ...whatIf ...if string contains only opening braces...st will be empty!
+                //     return false;
+                // }
+                if( (st.peek()  == '(' && ch == ')' ) ||                //if st.peek and ch are vice varsa...keep going and poping
+                    (st.peek() == '{' && ch == '}' )||
+                    (st.peek() == '[' && ch ==']') )
+                    {
+                        st.pop();
+                    }
+
+                    else{                                               //if its not like that... then its a missMath...return false
+                        return false;
+                    }
+
+                    }
+
+                
+
+                
+            }
+
+            if(st.isEmpty()){                                                           //IFFFFF stack is empty then only ...its valid paranthesis
+                return true;
+            }
+            else{
+                return false;
+            }
+
+
+    }
+}
+
 
